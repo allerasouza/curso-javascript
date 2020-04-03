@@ -4,20 +4,23 @@
         <title>Curso Javascript</title>
     </head>
     <body>
+        <div id='app'>
+            <button class="botao">Adicionar quadrado</button>
+
+        </div>
         <script>
-            var usuarios = [
-                {
-                    nome: "Diego",
-                    habilidades: ["Javascript", "ReactJS", "Redux"]
-                },
-                {
-                    nome: "Gabriel",
-                    habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
-                }
-            ];
-            
-            for (usuario of usuarios) {
-                console.log('O ' + usuario.nome + ' possui as habilidades: ' + usuario.habilidades.join(', '));
+            var containerElement = document.querySelector('body div#app');
+            var btnElement = document.querySelector('body div#app button[class=botao]');
+
+            btnElement.onclick = function() {
+                var squareElement = document.createElement('div');
+                squareElement.style.width = 100;
+                squareElement.style.height = 100;
+                squareElement.style.marginTop = 10;
+                squareElement.style.marginBottom = 10;
+                squareElement.style.backgroundColor = '#f00';
+                containerElement.appendChild(squareElement);
+                
             }
         </script>
     </body>
