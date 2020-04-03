@@ -5,22 +5,21 @@
     </head>
     <body>
         <script>
-            function temHabilidade(skills) {
-
-                if(skills.indexOf("Javascript") === -1) {
-                    return false;
-                } else {
-                    return true;
+            function experiencia(anos) {
+                if(anos >= 0 && anos <= 1) { // De 0-1 ano: Iniciante
+                    return 'Iniciante';
+                } else if( anos > 1 && anos <= 3) { // De 1-3 anos: Intermediário
+                    return 'Intermediário';
+                } else if(anos > 3 && anos <= 6) { // De 3-6 anos: Avançado
+                    return 'Avançado';
+                } else if(anos >= 7) { // De 7 acima: Jedi Master
+                    return 'Jedi Master';
                 }
+                
             }
 
-            var skills = ["Javascript", "ReactJS", "React Native"];
-            
-            if(temHabilidade(skills)) {
-                console.log('Tem');
-            } else {
-                console.log('Não tem');
-            }
+            var anosEstudo = 7;
+            console.log(experiencia(anosEstudo));
         </script>
     </body>
 </html>
